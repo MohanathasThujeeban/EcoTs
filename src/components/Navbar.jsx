@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Phone, Calendar, MapPin, Sparkles } from 'lucide-react';
+import { Menu, X, Phone, Calendar, MapPin, Sparkles, ChevronRight } from 'lucide-react';
 import logoImg from '../assets/logo.jpeg';
 
 export default function Navbar({ onOpenBooking }) {
