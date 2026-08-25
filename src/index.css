@@ -1,0 +1,128 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --primary: #1B5E20;
+    --primary-light: #2E7D32;
+    --primary-dark: #0f3d14;
+    --secondary: #0277BD;
+    --secondary-light: #039BE5;
+    --secondary-dark: #01579B;
+    --accent-emerald: #10B981;
+    --accent-cyan: #06B6D4;
+    --neutral-bg: #F7F9F8;
+    --neutral-surface: #FFFFFF;
+    --dark-bg: #0D1F17;
+    --dark-surface: #142920;
+    --dark-card: #183328;
+    --text-primary: #1F2937;
+    --text-secondary: #4B5563;
+    --text-muted: #6B7280;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: var(--text-primary);
+    background-color: var(--neutral-bg);
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6, .font-heading {
+    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+}
+
+/* Custom Utilities */
+.bg-primary { background-color: #1B5E20; }
+.bg-primary-light { background-color: #2E7D32; }
+.bg-primary-dark { background-color: #0f3d14; }
+.text-primary { color: #1B5E20; }
+.text-primary-light { color: #2E7D32; }
+.border-primary { border-color: #1B5E20; }
+
+.bg-secondary { background-color: #0277BD; }
+.bg-secondary-light { background-color: #039BE5; }
+.text-secondary { color: #0277BD; }
+.text-secondary-light { color: #039BE5; }
+.border-secondary { border-color: #0277BD; }
+
+.bg-dark-bg { background-color: #0D1F17; }
+.bg-dark-surface { background-color: #142920; }
+.bg-dark-card { background-color: #183328; }
+
+.bg-neutral-bg { background-color: #F7F9F8; }
+
+/* Engineering Blueprint & Mesh Grids */
+.blueprint-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(27, 94, 32, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(27, 94, 32, 0.05) 1px, transparent 1px);
+}
+
+.blueprint-grid-dark {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(2, 119, 189, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(2, 119, 189, 0.08) 1px, transparent 1px);
+}
+
+.dot-pattern {
+  background-image: radial-gradient(rgba(27, 94, 32, 0.12) 1.5px, transparent 1.5px);
+  background-size: 24px 24px;
+}
+
+.dot-pattern-dark {
+  background-image: radial-gradient(rgba(6, 182, 212, 0.15) 1.5px, transparent 1.5px);
+  background-size: 24px 24px;
+}
+
+/* Glassmorphism */
+.glass-nav {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(27, 94, 32, 0.08);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(27, 94, 32, 0.1);
+}
+
+.glass-card-dark {
+  background: rgba(20, 41, 32, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(2, 119, 189, 0.2);
+}
+
+/* Custom Glows and Shadows */
+.glow-primary {
+  box-shadow: 0 0 35px -5px rgba(27, 94, 32, 0.35);
+}
+
+.glow-secondary {
+  box-shadow: 0 0 35px -5px rgba(2, 119, 189, 0.35);
+}
+
+.glow-accent {
+  box-shadow: 0 0 40px -8px rgba(16, 185, 129, 0.4);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F1F5F3;
+}
+::-webkit-scrollbar-thumb {
+  background: #1B5E20;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #0277BD;
+}
