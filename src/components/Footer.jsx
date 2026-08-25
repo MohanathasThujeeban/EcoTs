@@ -30,7 +30,7 @@ export default function Footer({ onOpenBooking }) {
               Reserve Your Unit
             </span>
             <h3 className="text-xl sm:text-2xl font-bold text-white font-heading">
-              Looking for a New Home in Wellawatte?
+              Looking for a New Home at 33, Moor's Road?
             </h3>
             <p className="text-xs text-gray-300">
               Schedule a personalized viewing tour of our 2, 3 & 4 bedroom residences today.
@@ -61,11 +61,11 @@ export default function Footer({ onOpenBooking }) {
           <div className="space-y-3">
             <div className="flex items-center gap-3">
               <div className="w-12 h-12 rounded-2xl p-1 bg-white border border-white/20 shadow-md flex items-center justify-center overflow-hidden">
-                <img src={logoImg} alt="Ecobloom Residencies" className="w-full h-full object-contain" />
+                <img src={logoImg} alt="EcoTS Residencies" className="w-full h-full object-contain" />
               </div>
               <div>
                 <span className="text-xl font-black tracking-tight text-white font-heading">
-                  Ecobloom <span className="text-emerald-400">Residencies</span>
+                  EcoTS <span className="text-emerald-400">Residencies</span>
                 </span>
                 <span className="block text-[10px] uppercase font-bold tracking-widest text-[#039BE5]">
                   Colombo 06
@@ -143,7 +143,7 @@ export default function Footer({ onOpenBooking }) {
             <ul className="space-y-2 text-gray-300">
               <li className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
-                <span>Wellawatte, Colombo 06, Sri Lanka</span>
+                <span>33, Moor's Road, Colombo 06, Sri Lanka</span>
               </li>
               <li className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-emerald-400 flex-shrink-0" />
@@ -160,11 +160,11 @@ export default function Footer({ onOpenBooking }) {
         {/* Bottom Strip */}
         <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-gray-500">
           <div>
-            © {new Date().getFullYear()} Ecobloom Residencies. All rights reserved.
+            © {new Date().getFullYear()} EcoTS Residencies. All rights reserved.
           </div>
 
           <div className="flex items-center gap-4">
-            <span>Wellawatte, Colombo 06</span>
+            <span>33, Moor's Road, Colombo 06</span>
             <button
               onClick={scrollToTop}
               className="flex items-center gap-1 px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 text-gray-300 transition-all"

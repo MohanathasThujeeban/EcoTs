@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Phone, Calendar, MapPin, Sparkles, ChevronRight, Home, Building2, Gem, Compass, Image, PhoneCall } from 'lucide-react';
-import logoImg from '../assets/logo.jpeg';
+import logoImg from '../assets/logoforhome.jpeg';
 
 export default function Navbar({ onOpenBooking }) {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -56,9 +56,9 @@ export default function Navbar({ onOpenBooking }) {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
             </span>
-            <span className="text-emerald-400 font-bold truncate">Ecobloom Residencies</span>
+            <span className="text-[#10B981] font-bold truncate">EcoTS Residencies</span>
             <span className="text-gray-500 hidden sm:inline">•</span>
-            <span className="text-gray-300 hidden sm:inline">Wellawatte, Colombo 06</span>
+            <span className="text-gray-300 hidden sm:inline">33, Moor's Road, Colombo 06</span>
           </div>
 
           <div className="flex items-center gap-3 text-xs font-semibold flex-shrink-0">
@@ -101,7 +101,7 @@ export default function Navbar({ onOpenBooking }) {
             <div className="relative w-10 h-10 sm:w-11 sm:h-11 rounded-2xl p-1 bg-white border border-gray-200 shadow-xs flex items-center justify-center overflow-hidden group-hover:scale-105 transition-transform">
               <img
                 src={logoImg}
-                alt="Ecobloom Residencies Logo"
+                alt="EcoTS Residencies Logo"
                 className="w-full h-full object-contain"
               />
             </div>
@@ -193,9 +193,9 @@ export default function Navbar({ onOpenBooking }) {
                   <img src={logoImg} alt="Logo" className="w-8 h-8 object-contain" />
                   <div>
                     <h3 className="text-base font-extrabold text-gray-900 font-heading leading-tight">
-                      Ecobloom Residencies
+                      EcoTS Residencies
                     </h3>
-                    <p className="text-[10px] text-gray-500 font-medium">Wellawatte, Colombo 06</p>
+                    <p className="text-[10px] text-gray-500 font-medium">33, Moor's Road, Colombo 06</p>
                   </div>
                 </div>
 

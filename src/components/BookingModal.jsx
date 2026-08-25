@@ -60,7 +60,7 @@ export default function BookingModal({ isOpen, onClose }) {
                 Schedule a Property Tour
               </h3>
               <p className="text-xs text-gray-300">
-                Ecobloom Residencies • Wellawatte, Colombo 06
+                EcoTS Residencies • 33, Moor's Road, Colombo 06
               </p>
             </div>
 
