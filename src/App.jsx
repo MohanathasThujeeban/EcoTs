@@ -7,6 +7,7 @@ import ScrollToTop from './components/ScrollToTop';
 import BookingModal from './components/BookingModal';
 import MobileBottomBar from './components/MobileBottomBar';
 import Home from './pages/Home';
+import { PremiumIconGradients } from './components/PremiumIcon';
 
 export default function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -14,6 +15,7 @@ export default function App() {
 
   return (
     <Router>
+      <PremiumIconGradients />
       <ScrollToTop />
 
       {/* Branded Splash Screen Loader */}

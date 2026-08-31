@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone, Calendar, MessageSquare } from 'lucide-react';
+import PremiumIcon from './PremiumIcon';
 
 export default function MobileBottomBar({ onOpenBooking }) {
   return (
@@ -9,7 +9,7 @@ export default function MobileBottomBar({ onOpenBooking }) {
           href="tel:0771727099"
           className="flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-[#0277BD] hover:bg-[#039BE5] text-white text-xs font-extrabold shadow-md active:scale-98 transition-all"
         >
-          <Phone className="w-4 h-4 animate-bounce" />
+          <PremiumIcon name="phone" size={16} badge="none" />
           <span>Call 077 172 7099</span>
         </a>
 
@@ -17,7 +17,7 @@ export default function MobileBottomBar({ onOpenBooking }) {
           onClick={onOpenBooking}
           className="flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-[#1B5E20] hover:bg-[#2E7D32] text-white text-xs font-extrabold shadow-md active:scale-98 transition-all"
         >
-          <Calendar className="w-4 h-4 text-emerald-300" />
+          <PremiumIcon name="calendar" size={16} badge="none" />
           <span>Book a Viewing</span>
         </button>
       </div>

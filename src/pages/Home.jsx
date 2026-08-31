@@ -29,6 +29,7 @@ import logoImg from '../assets/logo.jpeg';
 import info1Img from '../assets/info1.jpg';
 import info2Img from '../assets/info2.jpg';
 import info3Img from '../assets/info3.jpg';
+import PremiumIcon from '../components/PremiumIcon';
 
 export default function Home({ onOpenBooking }) {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -129,7 +130,7 @@ export default function Home({ onOpenBooking }) {
             >
               {/* Badge */}
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/50 text-emerald-300 border border-emerald-400/50 text-[11px] sm:text-xs font-extrabold shadow-xl backdrop-blur-md">
-                <Sparkles className="w-3.5 h-3.5 text-emerald-400" />
+                <PremiumIcon name="sparkles" size={14} badge="none" />
                 <span>33, Moor's Road, Colombo 06</span>
               </div>
 
@@ -148,20 +149,20 @@ export default function Home({ onOpenBooking }) {
 
               {/* Expressive Interactive Feature Pills */}
               <div className="grid grid-cols-2 gap-2 pt-1 max-w-lg mx-auto lg:mx-0 text-left text-[11px] sm:text-xs">
-                <motion.div whileHover={{ scale: 1.02 }} className="p-2.5 rounded-xl bg-black/45 backdrop-blur-md border border-white/20 flex items-center gap-2 shadow-lg">
-                  <div className="p-1 rounded-md bg-emerald-500/30 text-emerald-300">🛏️</div>
+                <motion.div whileHover={{ scale: 1.02 }} className="p-2.5 rounded-xl bg-black/45 backdrop-blur-md border border-emerald-500/30 flex items-center gap-2.5 shadow-lg">
+                  <PremiumIcon name="bedroom" size={18} badge="squircle" badgeSize="sm" variant="emerald" />
                   <span className="font-bold text-white">2, 3 & 4 BR Units</span>
                 </motion.div>
-                <motion.div whileHover={{ scale: 1.02 }} className="p-2.5 rounded-xl bg-black/45 backdrop-blur-md border border-white/20 flex items-center gap-2 shadow-lg">
-                  <div className="p-1 rounded-md bg-cyan-500/30 text-cyan-300">📍</div>
+                <motion.div whileHover={{ scale: 1.02 }} className="p-2.5 rounded-xl bg-black/45 backdrop-blur-md border border-cyan-500/30 flex items-center gap-2.5 shadow-lg">
+                  <PremiumIcon name="location" size={18} badge="squircle" badgeSize="sm" variant="cyan" />
                   <span className="font-bold text-white">Convenient Location</span>
                 </motion.div>
-                <motion.div whileHover={{ scale: 1.02 }} className="p-2.5 rounded-xl bg-black/45 backdrop-blur-md border border-white/20 flex items-center gap-2 shadow-lg">
-                  <div className="p-1 rounded-md bg-amber-500/30 text-amber-300">💎</div>
+                <motion.div whileHover={{ scale: 1.02 }} className="p-2.5 rounded-xl bg-black/45 backdrop-blur-md border border-amber-500/30 flex items-center gap-2.5 shadow-lg">
+                  <PremiumIcon name="sparkles" size={18} badge="squircle" badgeSize="sm" variant="gold" />
                   <span className="font-bold text-white">Premium Comfort</span>
                 </motion.div>
-                <motion.div whileHover={{ scale: 1.02 }} className="p-2.5 rounded-xl bg-black/45 backdrop-blur-md border border-white/20 flex items-center gap-2 shadow-lg">
-                  <div className="p-1 rounded-md bg-emerald-500/30 text-emerald-300">💰</div>
+                <motion.div whileHover={{ scale: 1.02 }} className="p-2.5 rounded-xl bg-black/45 backdrop-blur-md border border-emerald-500/30 flex items-center gap-2.5 shadow-lg">
+                  <PremiumIcon name="coins" size={18} badge="squircle" badgeSize="sm" variant="emerald" />
                   <span className="font-bold text-white">Attractive Prices</span>
                 </motion.div>
               </div>
@@ -172,7 +173,7 @@ export default function Home({ onOpenBooking }) {
                   onClick={onOpenBooking}
                   className="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-[#1B5E20] hover:bg-[#2E7D32] text-white font-extrabold text-xs sm:text-sm flex items-center justify-center gap-2.5 shadow-2xl transition-all active:scale-98"
                 >
-                  <Calendar className="w-4 h-4 text-emerald-300" />
+                  <PremiumIcon name="calendar" size={18} badge="none" />
                   <span>Book a Viewing</span>
                 </button>
 
@@ -180,7 +181,7 @@ export default function Home({ onOpenBooking }) {
                   href="tel:0771727099"
                   className="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-[#0277BD] hover:bg-[#039BE5] text-white font-extrabold text-xs sm:text-sm flex items-center justify-center gap-2.5 shadow-xl transition-all active:scale-98"
                 >
-                  <Phone className="w-4 h-4" />
+                  <PremiumIcon name="phone" size={18} badge="none" />
                   <span>Call Now: 077 172 7099</span>
                 </a>
               </div>
@@ -188,11 +189,11 @@ export default function Home({ onOpenBooking }) {
               {/* Quick Contact Strip */}
               <div className="pt-3 border-t border-white/20 flex flex-wrap items-center justify-center lg:justify-start gap-4 sm:gap-6 text-[11px] sm:text-xs text-gray-200 font-bold">
                 <div className="flex items-center gap-1.5 bg-black/40 px-3 py-1 rounded-lg border border-white/10 backdrop-blur-xs">
-                  <MapPin className="w-3.5 h-3.5 text-emerald-400" />
+                  <PremiumIcon name="location" size={14} badge="none" />
                   <span>33, Moor's Road, Colombo 06</span>
                 </div>
                 <div className="flex items-center gap-1.5 bg-black/40 px-3 py-1 rounded-lg border border-white/10 backdrop-blur-xs">
-                  <Phone className="w-3.5 h-3.5 text-cyan-400" />
+                  <PremiumIcon name="phone" size={14} badge="none" />
                   <span>Alt Hotline: 076 067 3079</span>
                 </div>
               </div>
@@ -283,7 +284,7 @@ export default function Home({ onOpenBooking }) {
             {/* Right Text Content */}
             <div className="lg:col-span-6 space-y-5">
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 text-[#1B5E20] border border-emerald-200 text-xs font-bold">
-                <HomeIcon className="w-3.5 h-3.5" />
+                <PremiumIcon name="building" size={16} badge="none" />
                 <span>About the Property</span>
               </div>
 
@@ -310,14 +311,14 @@ export default function Home({ onOpenBooking }) {
                   onClick={onOpenBooking}
                   className="px-6 py-3 rounded-xl bg-[#1B5E20] hover:bg-[#2E7D32] text-white font-bold text-xs sm:text-sm shadow-md transition-all flex items-center justify-center gap-2"
                 >
-                  <Calendar className="w-4 h-4" />
+                  <PremiumIcon name="calendar" size={16} badge="none" />
                   <span>Schedule a Visit</span>
                 </button>
                 <a
                   href="tel:0771727099"
                   className="px-6 py-3 rounded-xl bg-white hover:bg-gray-50 text-[#0277BD] border border-[#0277BD]/30 font-bold text-xs sm:text-sm shadow-xs transition-all flex items-center justify-center gap-2"
                 >
-                  <Phone className="w-4 h-4" />
+                  <PremiumIcon name="phone" size={16} badge="none" />
                   <span>Call 077 172 7099</span>
                 </a>
               </div>
@@ -330,7 +331,8 @@ export default function Home({ onOpenBooking }) {
       <section id="features" className="py-16 sm:py-20 bg-[#F7F9F8] relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16 space-y-2.5">
-            <span className="text-xs font-bold uppercase tracking-widest text-[#1B5E20] bg-emerald-50 px-3.5 py-1.5 rounded-full border border-emerald-200">
+            <span className="text-xs font-bold uppercase tracking-widest text-[#1B5E20] bg-emerald-50 px-3.5 py-1.5 rounded-full border border-emerald-200 inline-flex items-center gap-1.5">
+              <PremiumIcon name="sparkles" size={14} badge="none" />
               Why EcoTS Residencies
             </span>
             <h2 className="text-2.5xl sm:text-4xl font-extrabold text-gray-900 font-heading">
@@ -348,8 +350,8 @@ export default function Home({ onOpenBooking }) {
               className="p-6 sm:p-7 rounded-3xl bg-white border border-gray-200/80 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
             >
               <div>
-                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-emerald-50 text-[#1B5E20] border border-emerald-100 flex items-center justify-center mb-4 text-xl sm:text-2xl">
-                  🛏️
+                <div className="mb-4">
+                  <PremiumIcon name="bedroom" size={28} badge="squircle" badgeSize="lg" variant="emerald" />
                 </div>
                 <h3 className="text-base sm:text-lg font-extrabold text-gray-900 font-heading">
                   Spacious Layouts
@@ -358,7 +360,8 @@ export default function Home({ onOpenBooking }) {
                   Beautifully designed 2, 3, and 4-bedroom units created to accommodate different lifestyles and family needs.
                 </p>
               </div>
-              <div className="mt-5 pt-3 border-t border-gray-100 text-xs font-bold text-[#1B5E20] flex items-center gap-1">
+              <div className="mt-5 pt-3 border-t border-gray-100 text-xs font-bold text-[#1B5E20] flex items-center gap-1.5">
+                <PremiumIcon name="check" size={14} badge="none" />
                 <span>2, 3 & 4 BR Units</span>
               </div>
             </motion.div>
@@ -369,8 +372,8 @@ export default function Home({ onOpenBooking }) {
               className="p-6 sm:p-7 rounded-3xl bg-white border border-gray-200/80 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
             >
               <div>
-                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-blue-50 text-[#0277BD] border border-blue-100 flex items-center justify-center mb-4 text-xl sm:text-2xl">
-                  💎
+                <div className="mb-4">
+                  <PremiumIcon name="sparkles" size={28} badge="squircle" badgeSize="lg" variant="gold" />
                 </div>
                 <h3 className="text-base sm:text-lg font-extrabold text-gray-900 font-heading">
                   Premium Living
@@ -379,7 +382,8 @@ export default function Home({ onOpenBooking }) {
                   Experience modern designs, quality comfort, and an elevated residential lifestyle.
                 </p>
               </div>
-              <div className="mt-5 pt-3 border-t border-gray-100 text-xs font-bold text-[#0277BD] flex items-center gap-1">
+              <div className="mt-5 pt-3 border-t border-gray-100 text-xs font-bold text-[#0277BD] flex items-center gap-1.5">
+                <PremiumIcon name="check" size={14} badge="none" />
                 <span>Elevated Comfort</span>
               </div>
             </motion.div>
@@ -390,8 +394,8 @@ export default function Home({ onOpenBooking }) {
               className="p-6 sm:p-7 rounded-3xl bg-white border border-gray-200/80 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
             >
               <div>
-                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-emerald-50 text-[#1B5E20] border border-emerald-100 flex items-center justify-center mb-4 text-xl sm:text-2xl">
-                  📍
+                <div className="mb-4">
+                  <PremiumIcon name="location" size={28} badge="squircle" badgeSize="lg" variant="cyan" />
                 </div>
                 <h3 className="text-base sm:text-lg font-extrabold text-gray-900 font-heading">
                   Convenient Location
@@ -400,7 +404,8 @@ export default function Home({ onOpenBooking }) {
                   A location designed to keep residents conveniently connected to the things they need.
                 </p>
               </div>
-              <div className="mt-5 pt-3 border-t border-gray-100 text-xs font-bold text-[#1B5E20] flex items-center gap-1">
+              <div className="mt-5 pt-3 border-t border-gray-100 text-xs font-bold text-[#1B5E20] flex items-center gap-1.5">
+                <PremiumIcon name="check" size={14} badge="none" />
                 <span>33, Moor's Road, Colombo 06</span>
               </div>
             </motion.div>
@@ -411,8 +416,8 @@ export default function Home({ onOpenBooking }) {
               className="p-6 sm:p-7 rounded-3xl bg-white border border-gray-200/80 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
             >
               <div>
-                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-blue-50 text-[#0277BD] border border-blue-100 flex items-center justify-center mb-4 text-xl sm:text-2xl">
-                  💰
+                <div className="mb-4">
+                  <PremiumIcon name="coins" size={28} badge="squircle" badgeSize="lg" variant="gold" />
                 </div>
                 <h3 className="text-base sm:text-lg font-extrabold text-gray-900 font-heading">
                   Attractive Prices
@@ -421,7 +426,8 @@ export default function Home({ onOpenBooking }) {
                   Modern and comfortable living with pricing positioned as an affordable option.
                 </p>
               </div>
-              <div className="mt-5 pt-3 border-t border-gray-100 text-xs font-bold text-[#0277BD] flex items-center gap-1">
+              <div className="mt-5 pt-3 border-t border-gray-100 text-xs font-bold text-[#0277BD] flex items-center gap-1.5">
+                <PremiumIcon name="check" size={14} badge="none" />
                 <span>Value Investment</span>
               </div>
             </motion.div>
@@ -502,7 +508,7 @@ export default function Home({ onOpenBooking }) {
                     <div className="space-y-2">
                       {apartmentData[activeApartmentTab].highlights.map((h, idx) => (
                         <div key={idx} className="flex items-center gap-2.5 text-xs text-gray-700 bg-white p-2.5 sm:p-3 rounded-xl border border-gray-100">
-                          <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0" />
+                          <PremiumIcon name="check" size={16} badge="none" />
                           <span>{h}</span>
                         </div>
                       ))}
@@ -512,15 +518,16 @@ export default function Home({ onOpenBooking }) {
                   <div className="pt-3 flex flex-wrap gap-3">
                     <button
                       onClick={onOpenBooking}
-                      className="w-full sm:w-auto px-6 py-3 rounded-xl bg-[#1B5E20] hover:bg-[#2E7D32] text-white font-bold text-xs sm:text-sm shadow-md transition-all text-center"
+                      className="w-full sm:w-auto px-6 py-3 rounded-xl bg-[#1B5E20] hover:bg-[#2E7D32] text-white font-bold text-xs sm:text-sm shadow-md transition-all text-center flex items-center justify-center gap-2"
                     >
-                      Book a Viewing for this Unit
+                      <PremiumIcon name="calendar" size={16} badge="none" />
+                      <span>Book a Viewing for this Unit</span>
                     </button>
                     <a
                       href="tel:0771727099"
-                      className="w-full sm:w-auto px-6 py-3 rounded-xl bg-[#0277BD] hover:bg-[#039BE5] text-white font-bold text-xs sm:text-sm shadow-md transition-all flex items-center justify-center gap-1.5"
+                      className="w-full sm:w-auto px-6 py-3 rounded-xl bg-[#0277BD] hover:bg-[#039BE5] text-white font-bold text-xs sm:text-sm shadow-md transition-all flex items-center justify-center gap-2"
                     >
-                      <Phone className="w-4 h-4" />
+                      <PremiumIcon name="phone" size={16} badge="none" />
                       <span>Call Advisor</span>
                     </a>
                   </div>
@@ -604,7 +611,8 @@ export default function Home({ onOpenBooking }) {
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center space-y-3 sm:space-y-4 mb-12 sm:mb-16">
-            <span className="text-xs font-bold uppercase tracking-widest text-emerald-400 bg-emerald-500/20 px-3.5 py-1.5 rounded-full border border-emerald-500/30 inline-block">
+            <span className="text-xs font-bold uppercase tracking-widest text-emerald-400 bg-emerald-500/20 px-3.5 py-1.5 rounded-full border border-emerald-500/30 inline-flex items-center gap-1.5">
+              <PremiumIcon name="sparkles" size={14} badge="none" />
               Dual Advantage
             </span>
             <h2 className="text-2.5xl sm:text-4xl lg:text-5xl font-black font-heading leading-tight">
@@ -622,8 +630,8 @@ export default function Home({ onOpenBooking }) {
             {/* Family Living Card */}
             <div className="p-6 sm:p-8 rounded-3xl bg-white/10 border border-white/15 backdrop-blur-md space-y-4 flex flex-col justify-between">
               <div className="space-y-3">
-                <div className="w-12 h-12 rounded-2xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center border border-emerald-500/30">
-                  <Users className="w-6 h-6 text-emerald-400" />
+                <div className="mb-2">
+                  <PremiumIcon name="building" size={26} badge="squircle" badgeSize="lg" variant="emerald" />
                 </div>
                 <h3 className="text-lg sm:text-xl font-bold font-heading">
                   For Your Family Living
@@ -635,11 +643,11 @@ export default function Home({ onOpenBooking }) {
 
               <ul className="space-y-2 text-xs text-emerald-300 pt-3 border-t border-white/10">
                 <li className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+                  <PremiumIcon name="check" size={14} badge="none" />
                   <span>2, 3 & 4-Bedroom spacious floorplans</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+                  <PremiumIcon name="check" size={14} badge="none" />
                   <span>Convenient access to top Colombo schools & amenities</span>
                 </li>
               </ul>
@@ -648,8 +656,8 @@ export default function Home({ onOpenBooking }) {
             {/* Real Estate Investment Card */}
             <div className="p-6 sm:p-8 rounded-3xl bg-white/10 border border-white/15 backdrop-blur-md space-y-4 flex flex-col justify-between">
               <div className="space-y-3">
-                <div className="w-12 h-12 rounded-2xl bg-blue-500/20 text-cyan-400 flex items-center justify-center border border-blue-500/30">
-                  <TrendingUp className="w-6 h-6 text-cyan-400" />
+                <div className="mb-2">
+                  <PremiumIcon name="coins" size={26} badge="squircle" badgeSize="lg" variant="cyan" />
                 </div>
                 <h3 className="text-lg sm:text-xl font-bold font-heading">
                   For Smart Property Investors
@@ -661,11 +669,11 @@ export default function Home({ onOpenBooking }) {
 
               <ul className="space-y-2 text-xs text-cyan-300 pt-3 border-t border-white/10">
                 <li className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-cyan-400 flex-shrink-0" />
+                  <PremiumIcon name="check" size={14} badge="none" />
                   <span>High rental demand urban corridor</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-cyan-400 flex-shrink-0" />
+                  <PremiumIcon name="check" size={14} badge="none" />
                   <span>Attractive entry pricing with high capital growth</span>
                 </li>
               </ul>
@@ -741,15 +749,15 @@ export default function Home({ onOpenBooking }) {
               </p>
 
               <div className="grid grid-cols-2 gap-3 pt-1">
-                <div className="p-3.5 rounded-2xl bg-white border border-gray-200 shadow-xs">
-                  <MapPin className="w-4.5 h-4.5 text-[#1B5E20] mb-1.5" />
-                  <h4 className="text-xs font-bold text-gray-900">Colombo 06 Access</h4>
+                <div className="p-3.5 rounded-2xl bg-white border border-gray-200 shadow-xs flex flex-col items-start gap-1">
+                  <PremiumIcon name="location" size={20} badge="squircle" badgeSize="sm" variant="emerald" />
+                  <h4 className="text-xs font-bold text-gray-900 mt-1">Colombo 06 Access</h4>
                   <p className="text-[10px] sm:text-[11px] text-gray-500 mt-0.5">Direct connectivity to Galle Road & Marine Drive</p>
                 </div>
 
-                <div className="p-3.5 rounded-2xl bg-white border border-gray-200 shadow-xs">
-                  <Compass className="w-4.5 h-4.5 text-[#0277BD] mb-1.5" />
-                  <h4 className="text-xs font-bold text-gray-900">Convenient Lifestyle</h4>
+                <div className="p-3.5 rounded-2xl bg-white border border-gray-200 shadow-xs flex flex-col items-start gap-1">
+                  <PremiumIcon name="building" size={20} badge="squircle" badgeSize="sm" variant="cyan" />
+                  <h4 className="text-xs font-bold text-gray-900 mt-1">Convenient Lifestyle</h4>
                   <p className="text-[10px] sm:text-[11px] text-gray-500 mt-0.5">Minutes to supermarkets, schools & transit</p>
                 </div>
               </div>
@@ -772,7 +780,9 @@ export default function Home({ onOpenBooking }) {
 
                 <div className="relative aspect-[16/10] rounded-2xl overflow-hidden bg-[#142920] flex items-center justify-center text-center p-5 border border-gray-200">
                   <div className="space-y-2 text-white">
-                    <MapPin className="w-9 h-9 text-emerald-400 mx-auto animate-bounce" />
+                    <div className="flex justify-center">
+                      <PremiumIcon name="location" size={36} badge="circle" badgeSize="lg" variant="emerald" />
+                    </div>
                     <h4 className="text-base font-bold font-heading">EcoTS Residencies</h4>
                     <p className="text-xs text-gray-300">33, Moor's Road, Colombo 06</p>
                     <p className="text-[11px] text-emerald-300 font-semibold pt-1">
@@ -806,7 +816,8 @@ export default function Home({ onOpenBooking }) {
             <div className="relative grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
               {/* Left Contact Pitch */}
               <div className="lg:col-span-6 space-y-4 sm:space-y-6">
-                <span className="text-xs font-bold uppercase tracking-widest text-emerald-400 bg-emerald-500/20 px-3.5 py-1.5 rounded-full border border-emerald-500/30 inline-block">
+                <span className="text-xs font-bold uppercase tracking-widest text-emerald-400 bg-emerald-500/20 px-3.5 py-1.5 rounded-full border border-emerald-500/30 inline-flex items-center gap-1.5">
+                  <PremiumIcon name="sparkles" size={14} badge="none" />
                   Priority Inquiries
                 </span>
 
@@ -822,9 +833,7 @@ export default function Home({ onOpenBooking }) {
                 <div className="space-y-2.5 pt-1">
                   <div className="p-3.5 rounded-2xl bg-white/10 border border-white/15 flex items-center justify-between">
                     <div className="flex items-center gap-3">
-                      <div className="p-2 rounded-xl bg-emerald-500/20 text-emerald-400">
-                        <Phone className="w-4 h-4" />
-                      </div>
+                      <PremiumIcon name="phone" size={20} badge="squircle" badgeSize="sm" variant="emerald" />
                       <div>
                         <span className="text-[9px] text-gray-400 uppercase font-bold block">Primary Hotline</span>
                         <strong className="text-sm sm:text-base text-white font-mono font-bold">077 172 7099</strong>
@@ -832,17 +841,16 @@ export default function Home({ onOpenBooking }) {
                     </div>
                     <a
                       href="tel:0771727099"
-                      className="px-3.5 py-1.5 rounded-xl bg-[#1B5E20] hover:bg-[#2E7D32] text-xs font-bold text-white transition-colors"
+                      className="px-3.5 py-1.5 rounded-xl bg-[#1B5E20] hover:bg-[#2E7D32] text-xs font-bold text-white transition-colors flex items-center gap-1.5"
                     >
-                      Call Now
+                      <PremiumIcon name="phone" size={12} badge="none" />
+                      <span>Call Now</span>
                     </a>
                   </div>
 
                   <div className="p-3.5 rounded-2xl bg-white/10 border border-white/15 flex items-center justify-between">
                     <div className="flex items-center gap-3">
-                      <div className="p-2 rounded-xl bg-blue-500/20 text-cyan-400">
-                        <Phone className="w-4 h-4" />
-                      </div>
+                      <PremiumIcon name="phone" size={20} badge="squircle" badgeSize="sm" variant="cyan" />
                       <div>
                         <span className="text-[9px] text-gray-400 uppercase font-bold block">Secondary Hotline</span>
                         <strong className="text-sm sm:text-base text-white font-mono font-bold">076 067 3079</strong>
@@ -850,9 +858,10 @@ export default function Home({ onOpenBooking }) {
                     </div>
                     <a
                       href="tel:0760673079"
-                      className="px-3.5 py-1.5 rounded-xl bg-[#0277BD] hover:bg-[#039BE5] text-xs font-bold text-white transition-colors"
+                      className="px-3.5 py-1.5 rounded-xl bg-[#0277BD] hover:bg-[#039BE5] text-xs font-bold text-white transition-colors flex items-center gap-1.5"
                     >
-                      Call Now
+                      <PremiumIcon name="phone" size={12} badge="none" />
+                      <span>Call Now</span>
                     </a>
                   </div>
                 </div>

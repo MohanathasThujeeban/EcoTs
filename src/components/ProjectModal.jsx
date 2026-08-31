@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, MapPin, Calendar, Layers, ShieldCheck, CheckCircle2, ChevronRight, BarChart3, Building, HardHat } from 'lucide-react';
+import { X, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import PremiumIcon from './PremiumIcon';
 
 export default function ProjectModal({ project, onClose }) {
   const [activeImageIndex, setActiveImageIndex] = useState(0);
@@ -32,7 +33,7 @@ export default function ProjectModal({ project, onClose }) {
                 {project.category}
               </span>
               <span className="text-xs font-semibold px-2.5 py-0.5 rounded-md bg-blue-50 text-blue-700 flex items-center gap-1">
-                <ShieldCheck className="w-3.5 h-3.5" />
+                <PremiumIcon name="security" size={12} badge="none" />
                 {project.rating}
               </span>
             </div>
@@ -92,7 +93,7 @@ export default function ProjectModal({ project, onClose }) {
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
               <div className="p-3.5 rounded-xl bg-gray-50 border border-gray-100">
                 <div className="flex items-center gap-1.5 text-xs text-gray-500">
-                  <MapPin className="w-3.5 h-3.5 text-[#1B5E20]" />
+                  <PremiumIcon name="location" size={14} badge="none" />
                   <span>Location</span>
                 </div>
                 <p className="text-sm font-bold text-gray-800 mt-1">{project.location}</p>
@@ -100,7 +101,7 @@ export default function ProjectModal({ project, onClose }) {
 
               <div className="p-3.5 rounded-xl bg-gray-50 border border-gray-100">
                 <div className="flex items-center gap-1.5 text-xs text-gray-500">
-                  <Calendar className="w-3.5 h-3.5 text-[#0277BD]" />
+                  <PremiumIcon name="calendar" size={14} badge="none" />
                   <span>Delivery</span>
                 </div>
                 <p className="text-sm font-bold text-gray-800 mt-1">{project.year} ({project.status})</p>
@@ -108,7 +109,7 @@ export default function ProjectModal({ project, onClose }) {
 
               <div className="p-3.5 rounded-xl bg-gray-50 border border-gray-100">
                 <div className="flex items-center gap-1.5 text-xs text-gray-500">
-                  <Building className="w-3.5 h-3.5 text-emerald-600" />
+                  <PremiumIcon name="building" size={14} badge="none" />
                   <span>Built-up Footprint</span>
                 </div>
                 <p className="text-sm font-bold text-gray-800 mt-1">{project.area}</p>
@@ -116,7 +117,7 @@ export default function ProjectModal({ project, onClose }) {
 
               <div className="p-3.5 rounded-xl bg-emerald-50/70 border border-emerald-100">
                 <div className="flex items-center gap-1.5 text-xs text-emerald-700 font-semibold">
-                  <HardHat className="w-3.5 h-3.5" />
+                  <PremiumIcon name="hardhat" size={14} badge="none" />
                   <span>Construction Volume</span>
                 </div>
                 <p className="text-sm font-bold text-emerald-800 mt-1">{project.constructionScale}</p>
@@ -150,13 +151,13 @@ export default function ProjectModal({ project, onClose }) {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
               <div>
                 <h4 className="text-sm font-bold text-gray-900 mb-3 flex items-center gap-2">
-                  <Layers className="w-4 h-4 text-[#1B5E20]" />
+                  <PremiumIcon name="building" size={16} badge="none" />
                   Contracted Scope of Works
                 </h4>
                 <ul className="space-y-2">
                   {project.scope.map((item, idx) => (
                     <li key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-gray-600">
-                      <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0 mt-0.5" />
+                      <PremiumIcon name="check" size={14} badge="none" />
                       <span>{item}</span>
                     </li>
                   ))}
@@ -165,7 +166,7 @@ export default function ProjectModal({ project, onClose }) {
 
               <div>
                 <h4 className="text-sm font-bold text-gray-900 mb-3 flex items-center gap-2">
-                  <BarChart3 className="w-4 h-4 text-[#0277BD]" />
+                  <PremiumIcon name="sparkles" size={16} badge="none" />
                   Key Construction Metrics
                 </h4>
                 <div className="space-y-2">

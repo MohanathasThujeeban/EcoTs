@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import confetti from 'canvas-confetti';
-import { X, Calendar, Clock, Phone, User, Mail, CheckCircle2, Building, Sparkles } from 'lucide-react';
+import { X, User, Phone } from 'lucide-react';
+import PremiumIcon from './PremiumIcon';
 
 export default function BookingModal({ isOpen, onClose }) {
   const [submitted, setSubmitted] = useState(false);
@@ -53,7 +54,8 @@ export default function BookingModal({ isOpen, onClose }) {
           {/* Header */}
           <div className="flex items-center justify-between px-6 py-5 bg-[#0D1F17] text-white">
             <div>
-              <span className="text-[10px] uppercase font-extrabold tracking-widest text-emerald-400 bg-emerald-500/20 px-2.5 py-0.5 rounded-full border border-emerald-500/30">
+              <span className="text-[10px] uppercase font-extrabold tracking-widest text-emerald-400 bg-emerald-500/20 px-2.5 py-0.5 rounded-full border border-emerald-500/30 inline-flex items-center gap-1.5">
+                <PremiumIcon name="sparkles" size={12} badge="none" />
                 VIP Private Viewing
               </span>
               <h3 className="text-xl font-bold font-heading mt-1">
@@ -76,8 +78,8 @@ export default function BookingModal({ isOpen, onClose }) {
           <div className="p-6">
             {submitted ? (
               <div className="text-center py-6 space-y-4">
-                <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center mx-auto shadow-inner">
-                  <CheckCircle2 className="w-9 h-9" />
+                <div className="flex justify-center">
+                  <PremiumIcon name="check" size={32} badge="circle" badgeSize="xl" variant="emerald" />
                 </div>
                 <h4 className="text-xl font-bold text-gray-900 font-heading">
                   Viewing Request Received!
@@ -88,7 +90,7 @@ export default function BookingModal({ isOpen, onClose }) {
 
                 <div className="p-4 rounded-2xl bg-emerald-50 border border-emerald-200 text-xs text-emerald-900 text-left space-y-1.5">
                   <div className="font-bold flex items-center gap-1.5">
-                    <Sparkles className="w-3.5 h-3.5 text-emerald-600" />
+                    <PremiumIcon name="sparkles" size={14} badge="none" />
                     Viewing Details:
                   </div>
                   <div>Apartment Interest: <strong>{formData.unitType.replace('-', ' ').toUpperCase()}</strong></div>
@@ -203,9 +205,10 @@ export default function BookingModal({ isOpen, onClose }) {
                 <div className="pt-3">
                   <button
                     type="submit"
-                    className="w-full py-3.5 rounded-xl bg-[#1B5E20] hover:bg-[#2E7D32] text-white font-extrabold text-xs sm:text-sm shadow-md transition-all hover:scale-101"
+                    className="w-full py-3.5 rounded-xl bg-[#1B5E20] hover:bg-[#2E7D32] text-white font-extrabold text-xs sm:text-sm shadow-md transition-all hover:scale-101 flex items-center justify-center gap-2"
                   >
-                    Confirm Booking Request
+                    <PremiumIcon name="calendar" size={16} badge="none" />
+                    <span>Confirm Booking Request</span>
                   </button>
                   <p className="text-[11px] text-gray-400 text-center mt-2">
                     Immediate assistance: <a href="tel:0771727099" className="text-[#0277BD] font-bold">077 172 7099</a> or <a href="tel:0760673079" className="text-[#0277BD] font-bold">076 067 3079</a>

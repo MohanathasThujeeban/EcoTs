@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { MapPin, ArrowUpRight, ShieldCheck, Calendar, Layers, HardHat } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
+import PremiumIcon from './PremiumIcon';
 
 export default function ProjectCard({ project, onSelect }) {
   return (
@@ -32,7 +33,7 @@ export default function ProjectCard({ project, onSelect }) {
             {project.category}
           </span>
           <span className="px-2.5 py-1 text-xs font-semibold rounded-full bg-[#0277BD]/90 text-white backdrop-blur-md shadow-sm flex items-center gap-1">
-            <ShieldCheck className="w-3 h-3 text-cyan-300" />
+            <PremiumIcon name="security" size={12} badge="none" />
             {project.rating}
           </span>
         </div>
@@ -40,7 +41,7 @@ export default function ProjectCard({ project, onSelect }) {
         {/* Bottom Floating Info on Image */}
         <div className="absolute bottom-3 left-3.5 right-3.5 flex items-end justify-between text-white">
           <div className="flex items-center gap-1.5 text-xs text-gray-200 bg-black/40 backdrop-blur-md px-2.5 py-1 rounded-lg">
-            <MapPin className="w-3.5 h-3.5 text-emerald-400" />
+            <PremiumIcon name="location" size={12} badge="none" />
             <span className="font-medium truncate">{project.location}</span>
           </div>
 
@@ -54,11 +55,11 @@ export default function ProjectCard({ project, onSelect }) {
       <div className="flex flex-col flex-grow p-5">
         <div className="flex items-center justify-between text-xs text-gray-400 mb-1.5 font-medium">
           <span className="flex items-center gap-1">
-            <Calendar className="w-3.5 h-3.5 text-gray-400" />
+            <PremiumIcon name="calendar" size={12} badge="none" />
             {project.year}
           </span>
           <span className="text-emerald-800 font-semibold bg-emerald-50 px-2 py-0.5 rounded flex items-center gap-1">
-            <HardHat className="w-3 h-3 text-emerald-600" />
+            <PremiumIcon name="hardhat" size={12} badge="none" />
             {project.constructionScale}
           </span>
         </div>

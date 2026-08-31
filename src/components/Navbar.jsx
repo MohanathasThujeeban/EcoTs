@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Phone, Calendar, MapPin, Sparkles, ChevronRight, Home, Building2, Gem, Compass, Image, PhoneCall } from 'lucide-react';
+import { Menu, X, ChevronRight } from 'lucide-react';
 import logoImg from '../assets/logoforhome.jpeg';
+import PremiumIcon from './PremiumIcon';
 
 export default function Navbar({ onOpenBooking }) {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -29,12 +30,12 @@ export default function Navbar({ onOpenBooking }) {
   }, [mobileMenuOpen]);
 
   const navLinks = [
-    { name: 'About Property', href: '#about', icon: <Home className="w-4 h-4 text-emerald-600" /> },
-    { name: 'Key Features', href: '#features', icon: <Gem className="w-4 h-4 text-[#0277BD]" /> },
-    { name: 'Apartment Types', href: '#apartments', icon: <Building2 className="w-4 h-4 text-emerald-600" /> },
-    { name: 'Family & Investment', href: '#investment', icon: <Sparkles className="w-4 h-4 text-[#0277BD]" /> },
-    { name: 'Gallery', href: '#gallery', icon: <Image className="w-4 h-4 text-emerald-600" /> },
-    { name: 'Location', href: '#location', icon: <Compass className="w-4 h-4 text-[#0277BD]" /> }
+    { name: 'About Property', href: '#about', icon: <PremiumIcon name="building" size={16} badge="squircle" badgeSize="sm" variant="emerald" /> },
+    { name: 'Key Features', href: '#features', icon: <PremiumIcon name="sparkles" size={16} badge="squircle" badgeSize="sm" variant="gold" /> },
+    { name: 'Apartment Types', href: '#apartments', icon: <PremiumIcon name="bedroom" size={16} badge="squircle" badgeSize="sm" variant="cyan" /> },
+    { name: 'Family & Investment', href: '#investment', icon: <PremiumIcon name="coins" size={16} badge="squircle" badgeSize="sm" variant="violet" /> },
+    { name: 'Gallery', href: '#gallery', icon: <PremiumIcon name="sky_lounge" size={16} badge="squircle" badgeSize="sm" variant="ruby" /> },
+    { name: 'Location', href: '#location', icon: <PremiumIcon name="location" size={16} badge="squircle" badgeSize="sm" variant="emerald" /> }
   ];
 
   const handleNavClick = (e, href) => {
@@ -66,7 +67,7 @@ export default function Navbar({ onOpenBooking }) {
               href="tel:0771727099"
               className="flex items-center gap-1 text-white hover:text-emerald-300 transition-colors font-mono font-bold"
             >
-              <Phone className="w-3 h-3 text-emerald-400" />
+              <PremiumIcon name="phone" size={12} badge="none" />
               <span>077 172 7099</span>
             </a>
             <span className="text-gray-600 hidden sm:inline">/</span>
@@ -98,7 +99,7 @@ export default function Navbar({ onOpenBooking }) {
             }}
             className="flex items-center gap-2.5 group"
           >
-            <div className="relative w-10 h-10 sm:w-11 sm:h-11 rounded-2xl p-1 bg-white border border-gray-200 shadow-xs flex items-center justify-center overflow-hidden group-hover:scale-105 transition-transform">
+            <div className="relative w-10 h-10 sm:w-11 sm:h-11 rounded-2xl p-1 bg-white border border-emerald-500/30 shadow-md flex items-center justify-center overflow-hidden group-hover:scale-105 transition-transform">
               <img
                 src={logoImg}
                 alt="EcoTS Residencies Logo"
@@ -133,9 +134,9 @@ export default function Navbar({ onOpenBooking }) {
           <div className="hidden sm:flex items-center gap-2.5">
             <a
               href="tel:0771727099"
-              className="flex items-center gap-1.5 px-3.5 py-2 text-xs font-bold text-[#0277BD] bg-[#0277BD]/10 hover:bg-[#0277BD]/15 border border-[#0277BD]/20 rounded-xl transition-all"
+              className="flex items-center gap-2 px-3.5 py-2 text-xs font-bold text-[#0277BD] bg-[#0277BD]/10 hover:bg-[#0277BD]/15 border border-[#0277BD]/20 rounded-xl transition-all"
             >
-              <Phone className="w-3.5 h-3.5" />
+              <PremiumIcon name="phone" size={14} badge="none" />
               <span>Call Now</span>
             </a>
 
@@ -143,7 +144,7 @@ export default function Navbar({ onOpenBooking }) {
               onClick={onOpenBooking}
               className="flex items-center gap-2 px-4 py-2 text-xs font-bold text-white bg-[#1B5E20] hover:bg-[#2E7D32] rounded-xl shadow-md transition-all hover:scale-102"
             >
-              <Calendar className="w-3.5 h-3.5" />
+              <PremiumIcon name="calendar" size={14} badge="none" />
               <span>Book a Viewing</span>
             </button>
           </div>
@@ -152,10 +153,10 @@ export default function Navbar({ onOpenBooking }) {
           <div className="flex items-center gap-2 lg:hidden">
             <a
               href="tel:0771727099"
-              className="p-2.5 rounded-xl bg-emerald-50 text-[#1B5E20] border border-emerald-200 text-xs font-bold flex items-center justify-center"
+              className="p-2 rounded-xl bg-emerald-50 text-[#1B5E20] border border-emerald-200 text-xs font-bold flex items-center justify-center"
               aria-label="Call hotline"
             >
-              <Phone className="w-4 h-4" />
+              <PremiumIcon name="phone" size={16} badge="none" />
             </a>
 
             <button

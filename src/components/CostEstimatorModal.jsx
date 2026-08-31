@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Calculator, Sparkles, ArrowRight, ShieldCheck, HardHat, Clock, DollarSign, Building2, Layers } from 'lucide-react';
+import { X, ArrowRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import PremiumIcon from './PremiumIcon';
 
 export default function CostEstimatorModal({ isOpen, onClose }) {
   const navigate = useNavigate();
@@ -86,9 +87,7 @@ export default function CostEstimatorModal({ isOpen, onClose }) {
           {/* Header */}
           <div className="flex items-center justify-between px-6 py-4 bg-gradient-to-r from-[#0D1F17] to-[#142920] text-white">
             <div className="flex items-center gap-3">
-              <div className="p-2 rounded-xl bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
-                <Calculator className="w-5 h-5" />
-              </div>
+              <PremiumIcon name="calculator" size={24} badge="squircle" badgeSize="sm" variant="cyan" />
               <div>
                 <h3 className="text-lg font-bold font-heading flex items-center gap-2">
                   Construction Cost & Timeline Estimator
@@ -203,7 +202,7 @@ export default function CostEstimatorModal({ isOpen, onClose }) {
             {/* Output Summary Card */}
             <div className="p-5 rounded-2xl bg-gradient-to-br from-[#F7F9F8] to-emerald-50/40 border border-emerald-200/80 shadow-sm">
               <div className="flex items-center gap-2 text-xs font-bold text-[#1B5E20] uppercase tracking-wider mb-4">
-                <Sparkles className="w-4 h-4 text-emerald-600" />
+                <PremiumIcon name="sparkles" size={14} badge="none" />
                 Construction Parametric Estimate Summary
               </div>
 
@@ -211,7 +210,7 @@ export default function CostEstimatorModal({ isOpen, onClose }) {
                 {/* Est Budget */}
                 <div className="p-3.5 rounded-xl bg-white border border-gray-100 shadow-sm">
                   <div className="flex items-center gap-1.5 text-xs text-gray-500 mb-1">
-                    <DollarSign className="w-4 h-4 text-emerald-600" />
+                    <PremiumIcon name="coins" size={16} badge="none" />
                     <span>Estimated Total CapEx</span>
                   </div>
                   <div className="text-base sm:text-lg font-black text-gray-900 font-heading">
@@ -223,7 +222,7 @@ export default function CostEstimatorModal({ isOpen, onClose }) {
                 {/* Materials */}
                 <div className="p-3.5 rounded-xl bg-white border border-emerald-100 shadow-sm">
                   <div className="flex items-center gap-1.5 text-xs text-emerald-700 font-semibold mb-1">
-                    <Layers className="w-4 h-4 text-emerald-600" />
+                    <PremiumIcon name="building" size={16} badge="none" />
                     <span>Estimated Materials</span>
                   </div>
                   <div className="text-base sm:text-lg font-black text-emerald-800 font-heading">
@@ -237,7 +236,7 @@ export default function CostEstimatorModal({ isOpen, onClose }) {
                 {/* Timeline */}
                 <div className="p-3.5 rounded-xl bg-white border border-gray-100 shadow-sm">
                   <div className="flex items-center gap-1.5 text-xs text-gray-500 mb-1">
-                    <Clock className="w-4 h-4 text-[#0277BD]" />
+                    <PremiumIcon name="calendar" size={16} badge="none" />
                     <span>Estimated Build Timeline</span>
                   </div>
                   <div className="text-base sm:text-lg font-black text-[#0277BD] font-heading">

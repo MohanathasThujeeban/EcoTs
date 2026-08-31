@@ -1,6 +1,7 @@
 import React from 'react';
-import { Phone, MapPin, Calendar, ArrowUp, Sparkles, Building, CheckCircle2 } from 'lucide-react';
+import { ArrowUp } from 'lucide-react';
 import logoImg from '../assets/logo.jpeg';
+import PremiumIcon from './PremiumIcon';
 
 export default function Footer({ onOpenBooking }) {
   const scrollToTop = () => {
@@ -26,7 +27,8 @@ export default function Footer({ onOpenBooking }) {
         {/* Top Callout Strip */}
         <div className="p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-[#142920] to-[#183328] border border-emerald-500/20 shadow-2xl mb-12 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="space-y-1 text-center md:text-left">
-            <span className="text-[10px] font-bold uppercase tracking-widest text-emerald-400">
+            <span className="text-[10px] font-bold uppercase tracking-widest text-emerald-400 flex items-center gap-1.5 justify-center md:justify-start">
+              <PremiumIcon name="sparkles" size={14} badge="none" />
               Reserve Your Unit
             </span>
             <h3 className="text-xl sm:text-2xl font-bold text-white font-heading">
@@ -42,14 +44,14 @@ export default function Footer({ onOpenBooking }) {
               onClick={onOpenBooking}
               className="px-6 py-3 rounded-xl bg-[#1B5E20] hover:bg-[#2E7D32] text-white font-bold text-xs sm:text-sm shadow-md transition-all flex items-center gap-2"
             >
-              <Calendar className="w-4 h-4" />
+              <PremiumIcon name="calendar" size={16} badge="none" />
               <span>Book a Viewing</span>
             </button>
             <a
               href="tel:0771727099"
               className="px-6 py-3 rounded-xl bg-[#0277BD] hover:bg-[#039BE5] text-white font-bold text-xs sm:text-sm shadow-md transition-all flex items-center gap-2"
             >
-              <Phone className="w-4 h-4" />
+              <PremiumIcon name="phone" size={16} badge="none" />
               <span>077 172 7099</span>
             </a>
           </div>
@@ -60,7 +62,7 @@ export default function Footer({ onOpenBooking }) {
           {/* Brand Info */}
           <div className="space-y-3">
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-2xl p-1 bg-white border border-white/20 shadow-md flex items-center justify-center overflow-hidden">
+              <div className="w-12 h-12 rounded-2xl p-1 bg-white border border-emerald-500/30 shadow-md flex items-center justify-center overflow-hidden">
                 <img src={logoImg} alt="EcoTS Residencies" className="w-full h-full object-contain" />
               </div>
               <div>
@@ -84,18 +86,21 @@ export default function Footer({ onOpenBooking }) {
             </h4>
             <ul className="space-y-1.5 text-gray-400">
               <li>
-                <a href="#apartments" onClick={(e) => handleNavClick(e, '#apartments')} className="hover:text-emerald-400 transition-colors">
-                  2 Bedroom (Couples / Small Families)
+                <a href="#apartments" onClick={(e) => handleNavClick(e, '#apartments')} className="hover:text-emerald-400 transition-colors flex items-center gap-1.5">
+                  <PremiumIcon name="bedroom" size={14} badge="none" />
+                  <span>2 Bedroom (Couples / Small Families)</span>
                 </a>
               </li>
               <li>
-                <a href="#apartments" onClick={(e) => handleNavClick(e, '#apartments')} className="hover:text-emerald-400 transition-colors">
-                  3 Bedroom (Growing Families)
+                <a href="#apartments" onClick={(e) => handleNavClick(e, '#apartments')} className="hover:text-emerald-400 transition-colors flex items-center gap-1.5">
+                  <PremiumIcon name="bedroom" size={14} badge="none" />
+                  <span>3 Bedroom (Growing Families)</span>
                 </a>
               </li>
               <li>
-                <a href="#apartments" onClick={(e) => handleNavClick(e, '#apartments')} className="hover:text-emerald-400 transition-colors">
-                  4 Bedroom (Larger Families)
+                <a href="#apartments" onClick={(e) => handleNavClick(e, '#apartments')} className="hover:text-emerald-400 transition-colors flex items-center gap-1.5">
+                  <PremiumIcon name="bedroom" size={14} badge="none" />
+                  <span>4 Bedroom (Larger Families)</span>
                 </a>
               </li>
             </ul>
@@ -142,15 +147,15 @@ export default function Footer({ onOpenBooking }) {
             </h4>
             <ul className="space-y-2 text-gray-300">
               <li className="flex items-start gap-2">
-                <MapPin className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
+                <PremiumIcon name="location" size={16} badge="none" />
                 <span>33, Moor's Road, Colombo 06, Sri Lanka</span>
               </li>
               <li className="flex items-center gap-2">
-                <Phone className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+                <PremiumIcon name="phone" size={16} badge="none" />
                 <a href="tel:0771727099" className="hover:text-white font-bold font-mono">077 172 7099</a>
               </li>
               <li className="flex items-center gap-2">
-                <Phone className="w-4 h-4 text-[#0277BD] flex-shrink-0" />
+                <PremiumIcon name="phone" size={16} badge="none" />
                 <a href="tel:0760673079" className="hover:text-white font-bold font-mono">076 067 3079</a>
               </li>
             </ul>
