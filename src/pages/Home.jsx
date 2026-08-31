@@ -30,6 +30,7 @@ import info1Img from '../assets/info1.jpg';
 import info2Img from '../assets/info2.jpg';
 import info3Img from '../assets/info3.jpg';
 import PremiumIcon from '../components/PremiumIcon';
+import ScrollCrane from '../components/ScrollCrane';
 
 export default function Home({ onOpenBooking }) {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -251,6 +252,8 @@ export default function Home({ onOpenBooking }) {
           </div>
         </div>
       </section>
+
+      <ScrollCrane />
 
       {/* 2. ABOUT THE PROPERTY SECTION */}
       <section id="about" className="py-16 sm:py-20 bg-white border-b border-gray-200">
