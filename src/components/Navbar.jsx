@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, ChevronRight } from 'lucide-react';
+import { Menu, X, ChevronRight, Calendar, Phone } from 'lucide-react';
 import logoImg from '../assets/logoforhome.jpeg';
 import PremiumIcon from './PremiumIcon';
 
