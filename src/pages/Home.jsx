@@ -26,6 +26,7 @@ import {
 import confetti from 'canvas-confetti';
 
 import logoImg from '../assets/logo.jpeg';
+import heroBgImg from '../assets/hero-bg.jpg';
 import info1Img from '../assets/info1.jpg';
 import info2Img from '../assets/info2.jpg';
 import info3Img from '../assets/info3.jpg';
@@ -111,9 +112,9 @@ export default function Home({ onOpenBooking }) {
         {/* Full-Screen High-Visibility Vibrant Background Image */}
         <div className="absolute inset-0 z-0 overflow-hidden">
           <img
-            src={info1Img}
-            alt="EcoTS Residencies Building Visual"
-            className="w-full h-full object-cover object-center opacity-85 sm:opacity-75 scale-100 transition-all duration-1000"
+            src={heroBgImg}
+            alt="EcoTS Residencies building exterior"
+            className="hero-background-image w-full h-full object-cover opacity-85 sm:opacity-75 scale-100 transition-all duration-1000"
           />
           {/* Subtle Top & Bottom Gradient (Keeps image 100% visible in middle) */}
           <div className="absolute inset-0 bg-gradient-to-b from-[#0D1F17]/85 via-black/25 to-[#0D1F17]/90" />
@@ -256,7 +257,7 @@ export default function Home({ onOpenBooking }) {
       <ScrollCrane />
 
       {/* 2. ABOUT THE PROPERTY SECTION */}
-      <section id="about" className="py-16 sm:py-20 bg-white border-b border-gray-200">
+      <section data-reveal id="about" className="py-16 sm:py-20 bg-white border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
             {/* Left Image Showcase */}
@@ -331,7 +332,7 @@ export default function Home({ onOpenBooking }) {
       </section>
 
       {/* 3. KEY FEATURES (4 INTERACTIVE CARDS) */}
-      <section id="features" className="py-16 sm:py-20 bg-[#F7F9F8] relative">
+      <section data-reveal id="features" className="py-16 sm:py-20 bg-[#F7F9F8] relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16 space-y-2.5">
             <span className="text-xs font-bold uppercase tracking-widest text-[#1B5E20] bg-emerald-50 px-3.5 py-1.5 rounded-full border border-emerald-200 inline-flex items-center gap-1.5">
@@ -439,7 +440,7 @@ export default function Home({ onOpenBooking }) {
       </section>
 
       {/* 4. APARTMENT TYPES SECTION */}
-      <section id="apartments" className="py-16 sm:py-20 bg-white border-b border-gray-200">
+      <section data-reveal id="apartments" className="py-16 sm:py-20 bg-white border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14 space-y-2.5">
             <span className="text-xs font-bold uppercase tracking-widest text-[#0277BD] bg-blue-50 px-3.5 py-1.5 rounded-full border border-blue-200">
@@ -609,7 +610,7 @@ export default function Home({ onOpenBooking }) {
       </section>
 
       {/* 5. FAMILY + INVESTMENT SECTION */}
-      <section id="investment" className="py-16 sm:py-20 bg-gradient-to-br from-[#0D1F17] via-[#142920] to-[#0D1F17] text-white relative overflow-hidden">
+      <section data-reveal id="investment" className="py-16 sm:py-20 bg-gradient-to-br from-[#0D1F17] via-[#142920] to-[#0D1F17] text-white relative overflow-hidden">
         <div className="absolute inset-0 blueprint-grid-dark opacity-20 pointer-events-none" />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -686,7 +687,7 @@ export default function Home({ onOpenBooking }) {
       </section>
 
       {/* 6. VISUAL GALLERY (info1.jpg, info2.jpg, info3.jpg) */}
-      <section id="gallery" className="py-16 sm:py-20 bg-white border-b border-gray-200">
+      <section data-reveal id="gallery" className="py-16 sm:py-20 bg-white border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14 space-y-2.5">
             <span className="text-xs font-bold uppercase tracking-widest text-[#1B5E20] bg-emerald-50 px-3.5 py-1.5 rounded-full border border-emerald-200">
@@ -704,6 +705,10 @@ export default function Home({ onOpenBooking }) {
             {galleryImages.map((img, idx) => (
               <motion.div
                 key={idx}
+                initial={{ opacity: 0, y: 28, scale: 0.98 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                viewport={{ once: true, amount: 0.22 }}
+                transition={{ duration: 0.48, delay: idx * 0.09, ease: [0.22, 1, 0.36, 1] }}
                 whileHover={{ y: -6 }}
                 onClick={() => setSelectedImage(img.src)}
                 className="group relative rounded-3xl overflow-hidden shadow-md border border-gray-200 bg-gray-900 cursor-pointer aspect-[4/3]"
@@ -734,7 +739,7 @@ export default function Home({ onOpenBooking }) {
       </section>
 
       {/* 7. LOCATION SECTION */}
-      <section id="location" className="py-16 sm:py-20 bg-[#F7F9F8] border-b border-gray-200">
+      <section data-reveal id="location" className="py-16 sm:py-20 bg-[#F7F9F8] border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
             {/* Left Location Info */}
@@ -811,7 +816,7 @@ export default function Home({ onOpenBooking }) {
       </section>
 
       {/* 8. CONTACT / BOOKING (RESERVE YOUR HOME TODAY) */}
-      <section id="contact" className="py-16 sm:py-20 bg-white relative">
+      <section data-reveal id="contact" className="py-16 sm:py-20 bg-white relative">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="p-6 sm:p-12 rounded-3xl bg-gradient-to-br from-[#0D1F17] to-[#183328] text-white shadow-2xl relative overflow-hidden">
             <div className="absolute inset-0 blueprint-grid-dark opacity-30 pointer-events-none" />

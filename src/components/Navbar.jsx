@@ -7,6 +7,7 @@ import PremiumIcon from './PremiumIcon';
 export default function Navbar({ onOpenBooking }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,6 +21,15 @@ export default function Navbar({ onOpenBooking }) {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    const sections = ['about', 'features', 'apartments', 'investment', 'gallery', 'location'].map((id) => document.getElementById(id)).filter(Boolean);
+    const observer = new IntersectionObserver((entries) => {
+      const visible = entries.filter((entry) => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+      if (visible) setActiveSection(visible.target.id);
+    }, { rootMargin: '-32% 0px -55% 0px', threshold: [0.05, 0.2, 0.5] });
+    sections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
+  }, []);
   // Lock body scroll when mobile menu open
   useEffect(() => {
     if (mobileMenuOpen) {
@@ -123,7 +133,7 @@ export default function Navbar({ onOpenBooking }) {
                 key={link.name}
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
-                className="px-3.5 py-1.5 text-xs font-bold text-gray-700 hover:text-[#1B5E20] hover:bg-gray-100/80 rounded-full transition-all"
+                className={`relative px-3.5 py-1.5 text-xs font-bold rounded-full transition-all ${activeSection === link.href.slice(1) ? 'nav-link-active text-[#1B5E20]' : 'text-gray-700 hover:text-[#1B5E20] hover:bg-gray-100/80'}`}
               >
                 {link.name}
               </a>
@@ -215,7 +225,7 @@ export default function Navbar({ onOpenBooking }) {
                     key={link.name}
                     href={link.href}
                     onClick={(e) => handleNavClick(e, link.href)}
-                    className="flex items-center justify-between p-3.5 rounded-2xl text-sm font-bold text-gray-800 hover:bg-emerald-50 hover:text-[#1B5E20] transition-colors border border-transparent hover:border-emerald-100"
+                    className={`flex items-center justify-between p-3.5 rounded-2xl text-sm font-bold transition-all border ${activeSection === link.href.slice(1) ? 'bg-emerald-50 text-[#1B5E20] border-emerald-200 translate-x-1' : 'text-gray-800 border-transparent hover:bg-emerald-50 hover:text-[#1B5E20] hover:border-emerald-100'}` }
                   >
                     <div className="flex items-center gap-3">
                       <div className="p-2 rounded-xl bg-gray-50 border border-gray-100">

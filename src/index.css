@@ -176,3 +176,15 @@
   .building-shell { right: 3vw; width: 112px; }
   .crane-scroll-cue { left: 1.1rem; }
 }
+/* Hero art uses a deliberate focal point instead of default centre-cropping. */
+.hero-background-image { object-position: 58% center; }
+@media (max-width: 640px) {
+  .hero-background-image { object-position: 68% center; transform: scale(1.04); }
+}
+/* Smooth navigation and scroll-in rhythm. */
+html { scroll-behavior: smooth; scroll-padding-top: 6.5rem; }
+.scroll-effects-ready [data-reveal] { opacity: 0; transform: translateY(32px); transition: opacity .72s cubic-bezier(.22,1,.36,1), transform .72s cubic-bezier(.22,1,.36,1); will-change: opacity, transform; }
+.scroll-effects-ready [data-reveal].is-in-view { opacity: 1; transform: translateY(0); }
+.nav-link-active { color: #1b5e20; background: #ecfdf3; box-shadow: 0 1px 3px rgba(21, 128, 61, .12); }
+@media (max-width: 700px) { html { scroll-padding-top: 5.5rem; }.scroll-effects-ready [data-reveal] { transform: translateY(20px); transition-duration: .52s; } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; }.scroll-effects-ready [data-reveal] { opacity: 1; transform: none; transition: none; } }

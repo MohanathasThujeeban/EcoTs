@@ -8,6 +8,7 @@ import BookingModal from './components/BookingModal';
 import MobileBottomBar from './components/MobileBottomBar';
 import Home from './pages/Home';
 import { PremiumIconGradients } from './components/PremiumIcon';
+import PageScrollEffects from './components/PageScrollEffects';
 
 export default function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -17,6 +18,7 @@ export default function App() {
     <Router>
       <PremiumIconGradients />
       <ScrollToTop />
+      <PageScrollEffects />
 
       {/* Branded Splash Screen Loader */}
       {isLoading && <Loader onFinish={() => setIsLoading(false)} />}
