@@ -19,28 +19,29 @@ import {
 } from 'lucide-react';
 import { leadershipTeam, certifications, milestones } from '../data/team';
 import logoImg from '../assets/logo.jpeg';
+import PremiumIcon from '../components/PremiumIcon';
 
 export default function About() {
   const coreValues = [
     {
       title: "Uncompromising Structural Integrity",
       desc: "Zero tolerance for quality defects. Every single pour is verified by certified cube crushing tests and Eurocode structural standards.",
-      icon: <ShieldCheck className="w-6 h-6 text-[#1B5E20]" />
+      icon: <PremiumIcon name="security" size={24} badge="squircle" badgeSize="md" variant="emerald" />
     },
     {
       title: "Zero-Harm Safety Culture (HSE)",
       desc: "ISO 45001 certified on-site safety protocols with continuous toolbox talks and 1.2M+ hours without lost-time injuries.",
-      icon: <HardHat className="w-6 h-6 text-amber-600" />
+      icon: <PremiumIcon name="hardhat" size={24} badge="squircle" badgeSize="md" variant="gold" />
     },
     {
       title: "BIM VDC & Digital Precision",
       desc: "Parametric LOD 500 virtual models eliminate costly on-site clashes, ensuring construction speed and schedule certainty.",
-      icon: <Cpu className="w-6 h-6 text-[#0277BD]" />
+      icon: <PremiumIcon name="cpu" size={24} badge="squircle" badgeSize="md" variant="cyan" />
     },
     {
       title: "Commercial Value & On-Time Handover",
       desc: "We engineer for constructability, optimizing material consumption and project timelines without inflating developer CapEx.",
-      icon: <HeartHandshake className="w-6 h-6 text-emerald-600" />
+      icon: <PremiumIcon name="hearthandshake" size={24} badge="squircle" badgeSize="md" variant="emerald" />
     }
   ];
 
@@ -146,7 +147,7 @@ export default function About() {
                 key={idx}
                 className="p-6 rounded-3xl bg-gray-50 border border-gray-200/70 hover:bg-white hover:shadow-md transition-all duration-300"
               >
-                <div className="w-12 h-12 rounded-2xl bg-white border border-gray-200 flex items-center justify-center mb-4">
+                <div className="mb-4">
                   {val.icon}
                 </div>
                 <h3 className="text-base font-bold text-gray-900 font-heading">{val.title}</h3>

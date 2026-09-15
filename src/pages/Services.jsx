@@ -22,19 +22,13 @@ import {
   HardHat
 } from 'lucide-react';
 import { services } from '../data/services';
+import PremiumIcon from '../components/PremiumIcon';
 
 export default function Services({ onOpenEstimator }) {
   const [selectedServiceId, setSelectedServiceId] = useState(services[0].id);
 
-  const getIcon = (iconName) => {
-    switch (iconName) {
-      case 'Building2': return <Building2 className="w-6 h-6" />;
-      case 'Route': return <Route className="w-6 h-6" />;
-      case 'Layers': return <Layers className="w-6 h-6" />;
-      case 'Boxes': return <Boxes className="w-6 h-6" />;
-      case 'ClipboardCheck': return <ClipboardCheck className="w-6 h-6" />;
-      default: return <Building2 className="w-6 h-6" />;
-    }
+  const getIcon = (iconName, variant = "emerald") => {
+    return <PremiumIcon name={iconName} size={22} badge="squircle" badgeSize="md" variant={variant} />;
   };
 
   const constructionWorkflow = [
@@ -42,31 +36,31 @@ export default function Services({ onOpenEstimator }) {
       step: "01",
       title: "Pre-Construction & BOQ Sizing",
       desc: "Architectural drawing reviews, soil borehole appraisal, constructability audits, and priced tender BOQ preparation.",
-      icon: <Search className="w-5 h-5 text-emerald-600" />
+      icon: <PremiumIcon name="search" size={20} badge="squircle" badgeSize="sm" variant="emerald" />
     },
     {
       step: "02",
       title: "Structural Engineering & FEA",
       desc: "Finite element computational load modeling, seismic analysis (Eurocode/ACI), and post-tensioned slab engineering.",
-      icon: <Cpu className="w-5 h-5 text-[#0277BD]" />
+      icon: <PremiumIcon name="cpu" size={20} badge="squircle" badgeSize="sm" variant="cyan" />
     },
     {
       step: "03",
       title: "BIM LOD 400 Coordination",
       desc: "Multi-disciplinary 3D clash resolution, parametric rebar detailing, and 4D schedule sequencing in Primavera P6.",
-      icon: <Boxes className="w-5 h-5 text-teal-600" />
+      icon: <PremiumIcon name="layers" size={20} badge="squircle" badgeSize="sm" variant="gold" />
     },
     {
       step: "04",
       title: "Precision On-Site Execution",
       desc: "Deep bored piling, self-climbing formwork, certified concrete cube crushing, and steel superstructure erection.",
-      icon: <Hammer className="w-5 h-5 text-amber-600" />
+      icon: <PremiumIcon name="hammer" size={20} badge="squircle" badgeSize="sm" variant="gold" />
     },
     {
       step: "05",
       title: "Testing, Commissioning & Handover",
       desc: "Full MEP integrated commissioning, As-Built documentation, local authority certificate sign-off, and warranty dossiers.",
-      icon: <ShieldCheck className="w-5 h-5 text-[#1B5E20]" />
+      icon: <PremiumIcon name="security" size={20} badge="squircle" badgeSize="sm" variant="emerald" />
     }
   ];
 
@@ -241,7 +235,7 @@ export default function Services({ onOpenEstimator }) {
               >
                 <div>
                   <div className="flex items-center justify-between mb-4">
-                    <div className="p-2.5 rounded-xl bg-white border border-gray-200 shadow-2xs">
+                    <div>
                       {stage.icon}
                     </div>
                     <span className="text-2xl font-black text-gray-300 font-mono">
