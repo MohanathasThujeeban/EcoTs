@@ -49,7 +49,7 @@ export default function BookingModal({ isOpen, onClose }) {
           exit={{ scale: 0.95, opacity: 0, y: 20 }}
           transition={{ type: "spring", duration: 0.45 }}
           onClick={(e) => e.stopPropagation()}
-          className="relative w-full max-w-lg bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-100 my-auto"
+          className="relative w-full max-w-lg ios-glass-card-dark rounded-3xl shadow-2xl overflow-hidden border border-white/20 my-auto text-white"
         >
           {/* Header */}
           <div className="flex items-center justify-between px-6 py-5 bg-[#0D1F17] text-white">

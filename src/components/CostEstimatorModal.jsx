@@ -82,7 +82,7 @@ export default function CostEstimatorModal({ isOpen, onClose }) {
           exit={{ scale: 0.95, opacity: 0, y: 20 }}
           transition={{ type: "spring", duration: 0.5, bounce: 0.1 }}
           onClick={(e) => e.stopPropagation()}
-          className="relative w-full max-w-3xl flex flex-col bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-100 my-auto"
+          className="relative w-full max-w-3xl flex flex-col ios-glass-card-dark rounded-3xl shadow-2xl overflow-hidden border border-white/20 my-auto text-white"
         >
           {/* Header */}
           <div className="flex items-center justify-between px-6 py-4 bg-gradient-to-r from-[#0D1F17] to-[#142920] text-white">
